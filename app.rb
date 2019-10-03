@@ -4,5 +4,18 @@ class App < Sinatra::Base
 		erb :index
 	end
 
+	get "/hello" do
+		erb :hello
+	end
 
+	get "/goodbye" do
+		@name = "Joe"
+		erb :goodbye
+	end
+
+	get "/date" do
+		date = DateTime.now
+		@date = date.strftime("%A, %B %d, %Y")
+		erb :date
+	end
 end
