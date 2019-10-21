@@ -1,5 +1,5 @@
+require 'pry'
 class App < Sinatra::Base
-
 	get '/' do
 		erb :index
 	end
@@ -8,11 +8,13 @@ class App < Sinatra::Base
 		erb :hello
 	end 
 
-	get '/goodbye' do 
+	get '/goodbye' do  
+		@name = "Joe"
 		erb :goodbye 
 	end 
 
 	get '/date' do 
+		@time = Date.today.strftime("%A, %B %e, %Y")
 		erb :date
 	end 
 end
